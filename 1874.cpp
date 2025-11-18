@@ -49,7 +49,6 @@ int main()
     {
         for(char c : result)
             cout << c << '\n';
-
     }
     return 0;
 }
