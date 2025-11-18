@@ -36,7 +36,7 @@ int main()
         }
         else
         {
-            possible =false;
+            possible = false;
             break;
         }
     }
