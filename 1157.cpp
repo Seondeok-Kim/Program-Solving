@@ -1,30 +1,52 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
+int main()
+{
     string s;
     cin >> s;
-    vector<int> cnt(26, 0);
 
-    for (char c : s) {
+    vector<int> cnt(26,0);
+    bool same = false;
+    
+    
+    for(char c: s)
+    {
         c = toupper(c);
-        cnt[c - 'A']++;
+        cnt[c-'A']++;
     }
 
-    int mx = 0, idx = 0;
-    bool dup = false;
-    for (int i = 0; i < 26; i++) {
-        if (cnt[i] > mx) {
-            mx = cnt[i];
+    char m;
+    int maxVal = 0, idx = 0;
+    for(int i = 0 ; i < 26 ; ++i)
+    {
+        if(cnt[i] > maxVal)
+        {
+            maxVal = cnt[i];
             idx = i;
-            dup = false;
-        } else if (cnt[i] == mx) {
-            dup = true;
+            same = false;
         }
+        else if (cnt[i] == maxVal)
+        {
+            same = true;
+        }
+        else 
+        {
+            continue;
+        }
+   
     }
-    cout << (dup ? '?' : char(idx + 'A'));
+
+    if (same == false)
+    {
+        cout << char(idx + 'A') << endl;
+    }
+    else
+    {
+        cout << "?" << endl;
+    }
+
     return 0;
 }
