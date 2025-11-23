@@ -29,7 +29,7 @@ int main()
 
         for(int i = 0 ; i < N ; ++i)
     {
-        cout << v[i].first << " " << v[i].second << endl ;
+        cout << v[i].first << " " << v[i].second << '\n' ;
     }
     
 	return 0;
